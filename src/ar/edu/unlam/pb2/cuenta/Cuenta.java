@@ -3,7 +3,7 @@ package ar.edu.unlam.pb2.cuenta;
 public class Cuenta {
 
 	protected Double saldo;
-	protected Long cbu;
+	
 	
 	public Cuenta (Double saldo) {
 		this.saldo = saldo;
@@ -24,12 +24,5 @@ public class Cuenta {
 		this.saldo = saldo;
 	}
 
-	public Long getCbu() {
-		return cbu;
-	}
-
-	public void setCbu(Long cbu) {
-		this.cbu = cbu;
-	}
 
 }

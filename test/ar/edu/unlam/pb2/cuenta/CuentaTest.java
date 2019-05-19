@@ -6,7 +6,25 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class CuentaTest {
+	
+	
+	@Test
 
+	public void testCuentaSueldo() {
+
+		CuentaSueldo cuentaSueldo = new CuentaSueldo(0.0);
+		
+		cuentaSueldo.extraer(100.0);
+		Double saldoObtenido = cuentaSueldo.getSaldo();
+		
+		Assert.assertFalse(saldoObtenido<0);
+		
+		
+		
+
+	}
+	
+	
 	@Test
 	public void testCajaDeAhorro() {
 
@@ -17,12 +35,15 @@ public class CuentaTest {
 		cuenta1.extraer(50.0);
 		cuenta1.extraer(50.0);
 		cuenta1.extraer(50.0);
+		cuenta1.extraer(50.0);
+		
 
-		Double valorEsperado = 244.0;
+		Double valorEsperado = 194.0;
 
 		Assert.assertEquals(valorEsperado, cuenta1.getSaldo());
 	}
 
+	
 	@Test
 
 	public void testCuentaCorriente() {
@@ -37,14 +58,22 @@ public class CuentaTest {
 
 	}
 
+	
 	@Test
 
-	public void testCuentaSueldo() {
+	public void testCuentaCorrienteExcedeSaldoDescubierto() {
 
-		CuentaSueldo cuenta1 = new CuentaSueldo(100.0);
+		CuentaCorriente cuenta1 = new CuentaCorriente(100.0);
 
-		cuenta1.extraer(150.0);
-		cuenta1.getSaldo();
+		cuenta1.extraer(400.0);
+		Boolean valorEsperado = true;
+
+				
+		Assert.assertTrue(valorEsperado = cuenta1.excedeDescubierto);
 
 	}
+	
+		
+	
+	
 }

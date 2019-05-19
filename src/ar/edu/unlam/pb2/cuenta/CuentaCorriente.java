@@ -4,7 +4,10 @@ public class CuentaCorriente extends Cuenta {
 
 	private final Integer DESCUBIERTO = 150;
 	private final Double PORCENTAJE = 0.05;
-
+	Double saldoExcedido;
+	Boolean excedeDescubierto = false;
+	
+	
 	public CuentaCorriente(Double saldo) {
 		super(saldo);
 	}
@@ -21,9 +24,8 @@ public class CuentaCorriente extends Cuenta {
 			} else {
 				if (cantidad > saldo + DESCUBIERTO) {
 
-					saldo = saldo + DESCUBIERTO - cantidad - (saldo + DESCUBIERTO - cantidad * PORCENTAJE);
-
-					System.out.println("Debes " + saldo);
+					excedeDescubierto = true;				
+					System.out.println("No posees descubierto disponible para realizar la operación.");
 				}
 
 			}
