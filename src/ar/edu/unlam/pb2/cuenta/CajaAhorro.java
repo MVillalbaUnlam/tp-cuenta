@@ -7,8 +7,10 @@ public class CajaAhorro extends Cuenta {
 		
 	}
 
+	
 	int contador = 0;
 
+	
 	public Double extraer(Double cantidad) {
 		final int MONTO_EXTRA = 6;
 		
@@ -16,7 +18,7 @@ public class CajaAhorro extends Cuenta {
 		if (cantidad < saldo) {
 			saldo = saldo - cantidad;
 			this.contador = contador +1;
-			if (contador > 4)
+			if (contador > 5)
 			saldo = saldo - MONTO_EXTRA;
 		}
 		
